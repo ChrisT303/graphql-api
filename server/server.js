@@ -4,7 +4,7 @@ const { authMiddleware } = require("./utils/auth");
 
 const path = require("path");
 const db = require("./config/connection");
-// const routes = require('./routes');
+const routes = require('./routes');
 
 const { typeDefs, resolvers } = require("./schemas");
 
@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
 
-// app.use(routes);
+app.use(routes);
 
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
