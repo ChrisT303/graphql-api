@@ -18,6 +18,14 @@ const typeDefs = gql`
     link: String
   }
 
+  input SavedBookInput {
+    authors: [String]
+    title: String
+    description: String
+    bookId: String
+    image: String
+    link: String
+  }
   type Auth {
     token: ID!
     user: User
@@ -33,3 +41,5 @@ const typeDefs = gql`
     removeBook(bookId: String!): User
   }
 `;
+
+module.exports = typeDefs;
