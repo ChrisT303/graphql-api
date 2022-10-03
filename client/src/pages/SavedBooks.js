@@ -6,7 +6,7 @@ import {
   Card,
   Button,
 } from "react-bootstrap";
-import { useQuery, useMutation } from "@apollo/react-hooks";
+import { useQuery, useMutation } from "@apollo/client";
 
 import { GET_ME } from "../utils/queries";
 import Auth from "../utils/auth";
@@ -42,7 +42,7 @@ const SavedBooks = () => {
   };
 
   // if data isn't here yet, say so
-  if (!loading) {
+  if (loading) {
     return <h2>LOADING...</h2>;
   }
 
